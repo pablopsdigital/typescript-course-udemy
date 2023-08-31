@@ -1,24 +1,35 @@
 "use strict";
-const msg = "Hola mundo";
-const hero = {
-    name: "Ironman",
-    age: 45,
-};
-hero.age = 50;
-//Especificar el tipo de dato
-const a = 10;
-let b = 10;
-// Any es cualquier cosa ganamso flexibilidad
-// pero perdemos control
-let c = 10;
-function sayHello(msg) {
-    console.log("MESSAGE: " + msg);
-}
-//Función anónima autoinvocada
 (() => {
-    const a = 10;
-    console.log(a);
+    // Tipos
+    const batman = "Bruce";
+    const superman = "Clark";
+    const existe = false;
+    // Tuplas
+    const parejaHeroes = [batman, superman];
+    const villano = ["Lex Lutor", 5, true];
+    // Arreglos
+    const aliados = ["Mujer Maravilla", "Acuaman", "San", "Flash"];
+    //Enumeraciones
+    let fuerza;
+    (function (fuerza) {
+        fuerza[fuerza["acuaman"] = 0] = "acuaman";
+        fuerza[fuerza["batman"] = 1] = "batman";
+        fuerza[fuerza["flash"] = 5] = "flash";
+        fuerza[fuerza["superman"] = 100] = "superman";
+    })(fuerza || (fuerza = {}));
+    const fuerzaFlash = fuerza.flash;
+    const fuertaSuperman = fuerza.superman;
+    const fuerzaBatman = fuerza.batman;
+    const fuerzaAcuaman = fuerza.acuaman;
+    // Retorno de funciones
+    function activar_batiseñal() {
+        return "activada";
+    }
+    function pedir_ayuda() {
+        console.log("Auxilio!!!");
+    }
+    // Aserciones de Tipo
+    const poder = "100";
+    const largoDelPoder = poder.length;
+    console.log(largoDelPoder);
 })();
-//Salida por consola
-sayHello("This is the message.");
-console.log(hero.age + a);

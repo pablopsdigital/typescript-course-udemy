@@ -8,7 +8,7 @@
   hero[0] = "kk";
   hero[1] = 200;
   hero[2] = true;
-  hero[2] = "dddd"; //Como es un boolean no permite string
+  // hero[2] = "dddd"; //Como es un boolean no permite string
 
   console.log(hero);
 })();

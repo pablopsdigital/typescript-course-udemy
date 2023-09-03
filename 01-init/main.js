@@ -43,6 +43,42 @@ let mystique;
 mystique = charles;
 mystique = apocalipsis;
 (() => {
+    const ironman = {
+        name: "Ironman",
+        weapon: "Armorsuit",
+    };
+    const capitanAmerica = {
+        name: "Capitán América",
+        weapon: "Escudo",
+    };
+    const thor = {
+        name: "Thor",
+        weapon: "Mjolnir",
+    };
+    const avengers = [ironman, thor, capitanAmerica];
+    for (const avenger of avengers) {
+        console.log(avenger.name);
+    }
+})();
+(() => {
+    const avengers = {
+        nick: "Samuel L. Jackson",
+        ironman: " Robert Downey Jr.",
+        vision: " Robert Downey Jr.",
+        activo: true,
+        poder: 1500,
+    };
+    const { poder, vision } = avengers;
+    console.log(poder, vision.toUpperCase());
+    const avengersArr = ["Capitán América", true, 10];
+    const [capi, ironman, numero] = avengersArr;
+    console.log({ capi, ironman, numero });
+})();
+(() => {
+    const NOMBRE = "Fernando";
+    console.log("let");
+})();
+(() => {
     const fullName = (firstName, lastName, upper = false) => {
         return `${firstName} ${lastName}`;
     };

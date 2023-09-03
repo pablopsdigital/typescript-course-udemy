@@ -1,43 +1,79 @@
-// Funciones Básicas
-function sumar(a: number, b: number): number {
-  return a + b;
-}
-
-const contar = (heroes: string[]): number => {
-  return heroes.length;
+// Objetos
+type Coche = {
+  carroceria: string;
+  modelo: string;
+  antibalas: boolean;
+  pasajeros: number;
+  disparar?: () => void;
 };
 
-const superHeroes: string[] = ["Flash", "Arrow", "Superman", "Linterna Verde"];
-contar(superHeroes);
-
-//Parametros por defecto
-const llamarBatman = (llamar: boolean = true): void => {
-  if (llamar) {
-    console.log("Batiseñal activada");
-  }
+const batimovil: Coche = {
+  carroceria: "Negra",
+  modelo: "6x6",
+  antibalas: true,
+  pasajeros: 4,
 };
 
-llamarBatman();
-
-// Rest?
-const unirheroes = (...personas: string[]): string => {
-  return personas.join(", ");
+const bumblebee: Coche = {
+  carroceria: "Amarillo con negro",
+  modelo: "4x2",
+  antibalas: true,
+  pasajeros: 4,
+  disparar() {
+    console.log("Disparando");
+  },
 };
 
-// Tipo funcion
-const noHaceNada = (
-  numero: number,
-  texto: string,
-  booleano: boolean,
-  arreglo: string[]
-) => {};
+// Villanos debe de ser un arreglo de objetos personalizados
 
-// Crear el tipo de funcion que acepte la funcion "noHaceNada"
-let noHaceNadaTampoco: (
-  n: number,
-  s: string,
-  b: boolean,
-  arreglo: string[]
-) => void;
+// Objetos
+type Villano = {
+  nombre: string;
+  edad: number;
+  mutante: boolean;
+};
 
-noHaceNadaTampoco = noHaceNada;
+const villanos: Villano[] = [
+  {
+    nombre: "Lex Luthor",
+    edad: 54,
+    mutante: false,
+  },
+  {
+    nombre: "Erik Magnus Lehnsherr",
+    edad: 49,
+    mutante: true,
+  },
+  {
+    nombre: "James Logan",
+    edad: 3,
+    mutante: true,
+  },
+];
+
+// Multiples tipos
+// cree dos tipos, uno para charles y otro para apocalipsis
+type Charles = {
+  poder: string;
+  estatura: number;
+};
+
+const charles: Charles = {
+  poder: "psiquico",
+  estatura: 1.78,
+};
+
+type Apocalipsis = {
+  lider: boolean;
+  miembros: string[];
+};
+
+const apocalipsis: Apocalipsis = {
+  lider: true,
+  miembros: ["Magneto", "Tormenta", "Psylocke", "Angel"],
+};
+
+// Mystique, debe poder ser cualquiera de esos dos mutantes (charles o apocalipsis)
+let mystique: Charles | Apocalipsis;
+mystique = charles;
+mystique = apocalipsis;

@@ -8,6 +8,7 @@ export const getPokemon = async (pokemonId: number): Promise<Pokemon> => {
   );
   const { data } = res;
   console.log(data.abilities[0].ability.name);
+  console.log(data.abilities[0].ability.name);
 
   //if (true) throw new Error("Auxilio");
   return data;
